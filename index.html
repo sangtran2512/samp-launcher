@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Launcher</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <!-- cửa sổ -->
+    <div class="window-controls">
+        <button id="minimize-btn">➖</button>
+        <button id="close-btn">✖</button>
+    </div>
+
+    <div class="container">
+        <!-- Navbar bên trái -->
+        <nav class="sidebar">
+            <ul>
+                <li><button class="nav-btn" data-page="game">Game</button></li>
+                <li><button class="nav-btn" data-page="player">Player</button></li>
+                <li><button class="nav-btn" data-page="settings">Settings</button></li>
+                <li><button class="nav-btn" data-page="mods">Custom Mods</button></li>
+                <li><button class="nav-btn" data-page="support">Supports</button></li>
+            </ul>
+        </nav>
+
+        <!-- Nội dung bên phải -->
+        <main class="content">
+            <div id="page-content">
+                <h2>Welcome to Game Launcher</h2>
+                <p>Click on the menu to navigate.</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>
