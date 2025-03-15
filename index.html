@@ -5,27 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Launcher</title>
     <link rel="stylesheet" href="styles/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/proxima-nova-condensed" rel="stylesheet">
+                
 </head>
 <body>
-    <!-- cửa sổ -->
+    
+    <div id="loading-screen" class="loading-screen">
+        <div class="loader"></div>
+        <p>Loading...</p>
+    </div>
+
     <div class="window-controls">
         <button id="minimize-btn">➖</button>
         <button id="close-btn">✖</button>
     </div>
 
-    <div class="container">
-        <!-- Navbar bên trái -->
+    <div class="container" style="display: none;">
+        <!-- Navbar -->
         <nav class="sidebar">
+            <div class="logo">
+                <img src="styles/images/logo/psa.png" alt="Logo">
+            </div>
             <ul>
-                <li><button class="nav-btn" data-page="game">Game</button></li>
-                <li><button class="nav-btn" data-page="player">Player</button></li>
-                <li><button class="nav-btn" data-page="settings">Settings</button></li>
-                <li><button class="nav-btn" data-page="mods">Custom Mods</button></li>
-                <li><button class="nav-btn" data-page="support">Supports</button></li>
+                <li><button class="nav-btn" data-page="game"><i class="fas fa-play"></i>Game<span></span></button></li>
+                <li><button class="nav-btn" data-page="players"><i class="fas fa-users"></i>Players <span class="badge">28</span></button></li>
+                <li><button class="nav-btn" data-page="settings"><i class="fas fa-cogs"></i>Settings<span></span></button></li>
+                <li><button class="nav-btn" data-page="mods"><i class="fas fa-puzzle-piece"></i>Mods<span></span></button></li>
+                <li><button class="nav-btn" data-page="support"><i class="fas fa-question-circle"></i>Support<span></span></button></li>
             </ul>
         </nav>
+        <!-- hr dọc-->
+        <div class="vertical-divider"></div>
 
-        <!-- Nội dung bên phải -->
         <main class="content">
             <div id="page-content">
                 <h2>Welcome to Game Launcher</h2>
@@ -35,5 +47,11 @@
     </div>
 
     <script src="renderer.js"></script>
+    <script>
+        setTimeout(function() {
+            document.getElementById("loading-screen").style.display = "none";  
+            document.querySelector(".container").style.display = "flex"; 
+        }, 2000); 
+    </script>
 </body>
 </html>
